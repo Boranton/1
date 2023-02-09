@@ -1,0 +1,26 @@
+# Задача 18: Требуется найти в массиве A[1..N] самый близкий по величине элемент к заданному числу X. Пользователь в первой строке вводит натуральное число N – количество элементов в массиве. В последующих строках записаны N целых чисел Ai. Последняя строка содержит число X
+
+# n = 5
+# 1 2 3 4 5
+# x = 6
+# -> 5
+
+import random as rn
+
+n = int(input ("Введите N "))
+x = int(input ("Введите X "))
+res = n
+l=[]
+for i in range (0,n):
+    l.append(rn.randint(0,n))
+print(f"n = {n}")
+print(l)
+d = abs(l[i]-x)
+for i in range(len(l)):
+    if (d == abs(l[i]-x)):
+        if l[i] < res:
+            res = l[i]
+    if d > abs(l[i]-x):
+        d = abs(l[i]-x)
+        res = l[i]
+print(f"=>{res}")
